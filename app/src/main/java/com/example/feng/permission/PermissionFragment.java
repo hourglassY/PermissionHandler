@@ -1,5 +1,6 @@
 package com.example.feng.permission;
 
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -61,7 +62,7 @@ public class PermissionFragment extends Fragment {
         boolean isSuccess = true;
         for (int i = 0; i < grantResults.length; i++) {
             log("onRequestPermissionsResult: " + grantResults[i]);
-            if (grantResults[i] != 0) {
+            if (grantResults[i] != PackageManager.PERMISSION_GRANTED) {
                 isSuccess = false;
                 break;
             }
